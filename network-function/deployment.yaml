@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: # kpt-merge: /network-function
+metadata: # kpt-merge: /network-function1
   name: network-function
   annotations:
-    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|network-function'
+    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|network-function|v2'
 spec:
   replicas: 1
   selector:
