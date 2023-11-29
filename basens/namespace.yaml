@@ -3,5 +3,5 @@ kind: Namespace
 metadata: # kpt-merge: /example
   name: example
   annotations:
-    internal.kpt.dev/upstream-identifier: '|Namespace|default|example'
+    internal.kpt.dev/upstream-identifier: '|Namespace|default|example|v3'
 spec: {}
