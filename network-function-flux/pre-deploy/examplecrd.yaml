@@ -26,8 +26,3 @@ spec:
         properties:
           spec:
             x-kubernetes-preserve-unknown-fields: true
-  conversion:
-    webhook:
-      clientConfig:
-        service:
-          namespace: example1
