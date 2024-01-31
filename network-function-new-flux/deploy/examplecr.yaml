@@ -2,7 +2,7 @@ apiVersion: example.com/v1
 kind: MyApp
 metadata: # kpt-merge: example1/test-app
   name: test-app
-  namespace: example1
+  namespace: example
   annotations:
     internal.kpt.dev/upstream-identifier: 'example.com|MyApp|example1|test-app'
 spec:
