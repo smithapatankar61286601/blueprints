@@ -1,0 +1,22 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata: # kpt-merge: default/netact-integration
+  name: netact-integration-a
+  namespace: default
+  annotations:
+    internal.kpt.dev/upstream-identifier: 'kustomize.toolkit.fluxcd.io|Kustomization|default|netact-integration'
+spec:
+  kubeConfig:
+    secretRef:
+      name: target-kubeconfig
+  dependsOn:
+  - name: workload-a
+  sourceRef:
+    kind: GitRepository
+    name: nc-app
+  path: "./network-function-new-flux-a/netact-integration/"
+  interval: 60m
+  timeout: 5m
+  prune: true
+  wait: true
+  force: true
