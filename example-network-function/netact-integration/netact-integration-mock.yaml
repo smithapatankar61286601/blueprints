@@ -1,11 +1,20 @@
-apiVersion: v1
-kind: ConfigMap
-metadata: # kpt-merge: example1/netactintegrationmock
+apiVersion: batch/v1
+kind: Job
+metadata: # kpt-merge: example1/job1
   name: netactintegrationmock
-  namespace: network-function-new-flux-a
+  namespace: example
   annotations:
-    internal.kpt.dev/upstream-identifier: '|ConfigMap|example1|netactintegrationmock'
-data:
-  allowed: '"true"'
-  enemies: aliens
-  lives: "4"
+    internal.kpt.dev/upstream-identifier: 'batch|Job|example'
+spec:
+  template:
+    spec:
+      containers:
+      - name: pi
+        image: ubuntu:latest
+        command: ["sh", "-c"]
+        args:
+        - |
+          sleep 60
+          echo "echo Hi"
+      restartPolicy: Never
+  backoffLimit: 4
