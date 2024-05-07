@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata: # kpt-merge: default/tenant
-  name: tenant-a
+  name: tenant
   namespace: default
   annotations:
     internal.kpt.dev/upstream-identifier: 'kustomize.toolkit.fluxcd.io|Kustomization|default|tenant'
