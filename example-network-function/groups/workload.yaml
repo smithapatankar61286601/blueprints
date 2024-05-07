@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata: # kpt-merge: default/workload
-  name: workload-a
+  name: workload
   namespace: default
   annotations:
     internal.kpt.dev/upstream-identifier: 'kustomize.toolkit.fluxcd.io|Kustomization|default|workload'
@@ -10,11 +10,11 @@ spec:
     secretRef:
       name: target-kubeconfig
   dependsOn:
-  - name: tenant-a
+  - name: tenant
   sourceRef:
     kind: GitRepository
     name: nc-app
-  path: "./network-function-new-flux-a/workload/"
+  path: "./example-network-function/workload/"
   interval: 60m
   timeout: 5m
   prune: true
