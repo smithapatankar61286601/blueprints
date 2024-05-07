@@ -14,7 +14,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: nc-app
-  path: "./network-function-new-flux-a/netact-integration/"
+  path: "./example-network-function/netact-integration/"
   interval: 60m
   timeout: 5m
   prune: true
