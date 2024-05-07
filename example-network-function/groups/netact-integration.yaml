@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata: # kpt-merge: default/netact-integration
-  name: netact-integration-a
+  name: netact-integration
   namespace: default
   annotations:
     internal.kpt.dev/upstream-identifier: 'kustomize.toolkit.fluxcd.io|Kustomization|default|netact-integration'
@@ -10,7 +10,7 @@ spec:
     secretRef:
       name: target-kubeconfig
   dependsOn:
-  - name: workload-a
+  - name: workload
   sourceRef:
     kind: GitRepository
     name: nc-app
